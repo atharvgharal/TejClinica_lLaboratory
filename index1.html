@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Diagnostic Lab</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f2f2f2;
+text-align:center;
+}
+
+.container{
+width:80%;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+.test-box{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:8px;
+}
+
+button{
+background:#25D366;
+color:white;
+border:none;
+padding:10px 20px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.pay{
+background:#0077ff;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>My Diagnostic Lab</h1>
+
+<img src="lab.jpg" width="200">
+
+<h2>Available Tests</h2>
+
+<div class="test-box">Blood Test - ₹500 (20% Discount)</div>
+<div class="test-box">Diabetes Test - ₹400 (15% Discount)</div>
+<div class="test-box">Thyroid Test - ₹600 (10% Discount)</div>
+
+<h2>Book Appointment</h2>
+
+<label>Select Test</label>
+<br>
+
+<select id="test">
+<option>Blood Test</option>
+<option>Diabetes Test</option>
+<option>Thyroid Test</option>
+</select>
+
+<br><br>
+
+<label>Select Date</label>
+<br>
+
+<input type="date" id="date">
+
+<br><br>
+
+<label>Select Time</label>
+<br>
+
+<select id="time">
+
+<option>7:00 AM</option>
+<option>8:00 AM</option>
+<option>9:00 AM</option>
+<option>10:00 AM</option>
+<option>11:00 AM</option>
+<option>12:00 PM</option>
+<option>1:00 PM</option>
+<option>2:00 PM</option>
+<option>3:00 PM</option>
+<option>4:00 PM</option>
+<option>5:00 PM</option>
+<option>6:00 PM</option>
+<option>7:00 PM</option>
+<option>8:00 PM</option>
+
+</select>
+
+<br><br>
+
+<button onclick="sendWhatsApp()">Book on WhatsApp</button>
+
+<br><br>
+
+<button class="pay" onclick="payNow()">Pay Online</button>
+
+<h3>Contact</h3>
+
+📞 9503768636
+<br><br>
+
+📍 <a href="https://maps.app.goo.gl/8XvWrzvtxxQW2WYf7" target="_blank">Open Location</a>
+
+</div>
+
+<script>
+
+function sendWhatsApp(){
+
+var test=document.getElementById("test").value;
+var date=document.getElementById("date").value;
+var time=document.getElementById("time").value;
+
+var phone="+919503768636";
+
+var msg="Appointment Booking:%0A Test:"+test+"%0A Date:"+date+"%0A Time:"+time;
+
+var url="https://wa.me/"+phone+"?text="+msg;
+
+window.open(url,'_blank');
+
+}
+
+function payNow(){
+
+var upi="atharvgarala@oksbi";
+
+window.location.href=upi;
+
+}
+
+</script>
+
+</body>
+</html>
